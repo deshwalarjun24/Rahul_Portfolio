@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4db5ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Contact Form</h1>
+    
+    <h2>Method 1: Direct Form Submission</h2>
+    <form action="mailto:rahulwalia5740@gmail.com" method="POST" enctype="text/plain">
+        <div class="form-group">
+            <label for="name1">Name:</label>
+            <input type="text" id="name1" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email1">Email:</label>
+            <input type="email" id="email1" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message1">Message:</label>
+            <textarea id="message1" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send (Method 1)</button>
+    </form>
+    
+    <hr style="margin: 30px 0;">
+    
+    <h2>Method 2: JavaScript Mailto</h2>
+    <form id="jsForm">
+        <div class="form-group">
+            <label for="name2">Name:</label>
+            <input type="text" id="name2" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email2">Email:</label>
+            <input type="email" id="email2" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message2">Message:</label>
+            <textarea id="message2" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send (Method 2)</button>
+    </form>
+
+    <script>
+        document.getElementById('jsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name2').value;
+            const email = document.getElementById('email2').value;
+            const message = document.getElementById('message2').value;
+            
+            if (!name || !email || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
+            
+            alert('Thank you! Opening email client...');
+            
+            const mailtoLink = `mailto:rahulwalia5740@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html> 
