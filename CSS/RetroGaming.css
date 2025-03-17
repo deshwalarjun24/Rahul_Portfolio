@@ -392,8 +392,9 @@ section h2::after {
 }
 
 .contact-form button:hover {
-    background-color: var(--secondary-color);
+    background-color: white;
     color: var(--bg-dark);
+    transform: translateY(-4px);
 }
 
 /* Footer */

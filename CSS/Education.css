@@ -56,7 +56,7 @@
 
 .education-item p {
   font-size: 1.1rem;
-  color:white /* Lighter text color */
+  color:white; /* Lighter text color */
   margin-bottom: 1rem;
 }
 
