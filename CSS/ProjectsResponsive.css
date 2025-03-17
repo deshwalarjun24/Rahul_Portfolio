@@ -122,6 +122,8 @@
     
     h2 {
         font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 25px;
     }
     
     h3 {
@@ -166,6 +168,8 @@
     
     .menu.open {
         max-height: 500px;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
     }
     
     .menu li {
@@ -177,17 +181,23 @@
         max-width: 100%;
     }
     
-    .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
+    .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
     
-    .project-card {
-        height: 240px;
+    .project-item {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 15px;
+        border-radius: 8px;
     }
     
     .project-title {
         font-size: 1.3rem;
+        margin-top: 15px;
     }
     
     .project-description {
@@ -195,21 +205,54 @@
     }
     
     /* Filter container */
-    .filter-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    /* Show mobile dropdown, hide desktop buttons */
-    .filter-dropdown {
+    .filter-dropdown-container {
         display: block;
         width: 100%;
         max-width: 300px;
+        margin: 0 auto 25px;
     }
     
-    .filter-buttons {
+    .filter-dropdown-btn {
+        width: 100%;
+        padding: 10px 15px;
+        font-size: 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 6px;
+    }
+    
+    .filter-dropdown-content {
+        width: 100%;
+        border-radius: 6px;
+    }
+    
+    .filter-option {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+    
+    /* Hide desktop category buttons */
+    .project-categories {
         display: none;
+    }
+    
+    /* Carousel adjustments */
+    .carousel {
+        height: 200px;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+    
+    .carousel-image {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .prev, .next {
+        font-size: 1.5rem;
+        width: 35px;
+        height: 35px;
     }
     
     /* Project modal */
@@ -236,14 +279,18 @@
     
     h2 {
         font-size: 1.6rem;
+        margin-bottom: 20px;
     }
     
     h3 {
         font-size: 1.3rem;
+        margin-top: 12px;
+        margin-bottom: 8px;
     }
     
     p {
         font-size: 0.9rem;
+        margin-bottom: 8px;
     }
     
     /* Header/Navigation adjustments */
@@ -261,59 +308,48 @@
     }
     
     /* Projects page specific */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .project-card {
-        height: 220px;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .project-title {
-        font-size: 1.2rem;
+    .project-item {
+        padding: 12px;
+        margin-bottom: 20px;
     }
     
     /* Filter dropdown */
-    .filter-dropdown {
+    .filter-dropdown-container {
         max-width: 250px;
+        margin-bottom: 20px;
     }
     
-    /* Project modal */
-    .project-modal-content {
-        padding: 15px;
+    .filter-dropdown-btn {
+        padding: 8px 12px;
+        font-size: 0.95rem;
     }
     
-    .modal-gallery {
+    .filter-option {
+        padding: 8px 12px;
+        font-size: 0.95rem;
+    }
+    
+    /* Carousel adjustments */
+    .carousel {
         height: 180px;
     }
     
-    .modal-close {
-        top: 10px;
-        right: 10px;
-        font-size: 1.5rem;
+    .carousel-image {
+        height: 180px;
     }
     
-    .modal-title {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
+    .prev, .next {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
     }
     
-    .modal-description {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-    }
-    
-    .modal-tech {
-        font-size: 0.85rem;
-        margin-bottom: 15px;
-    }
-    
-    .modal-links a {
+    /* Project links */
+    .project-link, .play-video-link {
+        display: inline-block;
         padding: 8px 15px;
         font-size: 0.9rem;
+        margin-top: 10px;
     }
 }
 
@@ -329,14 +365,19 @@
     
     h2 {
         font-size: 1.5rem;
+        margin-bottom: 18px;
     }
     
     h3 {
         font-size: 1.2rem;
+        margin-top: 10px;
+        margin-bottom: 6px;
     }
     
     p {
         font-size: 0.85rem;
+        margin-bottom: 6px;
+        line-height: 1.4;
     }
     
     /* Header/Navigation adjustments */
@@ -354,51 +395,62 @@
     }
     
     /* Projects page specific */
-    .project-card {
-        height: 200px;
-    }
-    
-    .project-title {
-        font-size: 1.1rem;
-    }
-    
-    .project-description {
-        font-size: 0.85rem;
+    .project-item {
+        padding: 10px;
+        margin-bottom: 18px;
     }
     
     /* Filter dropdown */
-    .filter-dropdown {
+    .filter-dropdown-container {
         max-width: 220px;
+        margin-bottom: 18px;
+    }
+    
+    .filter-dropdown-btn {
         padding: 8px;
         font-size: 0.9rem;
     }
     
-    /* Project modal */
-    .project-modal-content {
-        width: 95%;
-        padding: 12px;
+    .filter-option {
+        padding: 8px;
+        font-size: 0.9rem;
     }
     
-    .modal-gallery {
+    /* Carousel adjustments */
+    .carousel {
         height: 160px;
     }
     
-    .modal-title {
-        font-size: 1.3rem;
+    .carousel-image {
+        height: 160px;
     }
     
-    .modal-description {
-        font-size: 0.85rem;
+    .prev, .next {
+        font-size: 1.2rem;
+        width: 28px;
+        height: 28px;
+        opacity: 0.8;
     }
     
-    .modal-tech {
-        font-size: 0.8rem;
-    }
-    
-    .modal-links a {
+    /* Project links */
+    .project-link, .play-video-link {
         padding: 7px 12px;
         font-size: 0.85rem;
-        margin: 0 5px;
+        margin-top: 8px;
+        display: block;
+        text-align: center;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Back to top button */
+    #back-to-top {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        right: 15px;
+        bottom: 15px;
     }
 }
 
@@ -414,14 +466,19 @@
     
     h2 {
         font-size: 1.4rem;
+        margin-bottom: 15px;
     }
     
     h3 {
         font-size: 1.1rem;
+        margin-top: 8px;
+        margin-bottom: 5px;
     }
     
     p {
         font-size: 0.8rem;
+        margin-bottom: 5px;
+        line-height: 1.3;
     }
     
     /* Header/Navigation adjustments */
@@ -435,60 +492,64 @@
     }
     
     /* Projects page specific */
-    .project-card {
-        height: 180px;
-    }
-    
-    .project-title {
-        font-size: 1rem;
-    }
-    
-    .project-description {
-        font-size: 0.8rem;
+    .project-item {
+        padding: 8px;
+        margin-bottom: 15px;
     }
     
     /* Filter dropdown */
-    .filter-dropdown {
+    .filter-dropdown-container {
         max-width: 200px;
+        margin-bottom: 15px;
+    }
+    
+    .filter-dropdown-btn {
         padding: 7px;
         font-size: 0.85rem;
     }
     
-    /* Project modal */
-    .project-modal-content {
-        padding: 10px;
+    .filter-option {
+        padding: 7px;
+        font-size: 0.85rem;
     }
     
-    .modal-gallery {
+    /* Carousel adjustments */
+    .carousel {
         height: 140px;
     }
     
-    .modal-title {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
+    .carousel-image {
+        height: 140px;
     }
     
-    .modal-description {
+    .prev, .next {
+        font-size: 1.1rem;
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* Project links */
+    .project-link, .play-video-link {
+        padding: 6px 10px;
         font-size: 0.8rem;
-        margin-bottom: 12px;
+        margin-top: 6px;
+        max-width: 180px;
     }
     
-    .modal-tech {
-        font-size: 0.75rem;
-        margin-bottom: 12px;
+    /* Strong and emphasis text */
+    strong, em {
+        display: inline-block;
+        margin-bottom: 2px;
     }
     
-    .modal-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+    /* List items in project descriptions */
+    .project-item ul {
+        padding-left: 15px;
     }
     
-    .modal-links a {
-        width: 100%;
-        max-width: 150px;
-        text-align: center;
-        margin: 0;
+    .project-item li {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
     }
 }
 
@@ -504,14 +565,19 @@
     
     h2 {
         font-size: 1.3rem;
+        margin-bottom: 12px;
     }
     
     h3 {
         font-size: 1rem;
+        margin-top: 6px;
+        margin-bottom: 4px;
     }
     
     p {
         font-size: 0.75rem;
+        margin-bottom: 4px;
+        line-height: 1.2;
     }
     
     /* Header/Navigation adjustments */
@@ -529,136 +595,216 @@
     }
     
     /* Projects page specific */
-    .project-card {
-        height: 160px;
-    }
-    
-    .project-title {
-        font-size: 0.9rem;
-    }
-    
-    .project-description {
-        font-size: 0.75rem;
+    .project-item {
+        padding: 6px;
+        margin-bottom: 12px;
     }
     
     /* Filter dropdown */
-    .filter-dropdown {
+    .filter-dropdown-container {
         max-width: 180px;
+        margin-bottom: 12px;
+    }
+    
+    .filter-dropdown-btn {
         padding: 6px;
         font-size: 0.8rem;
     }
     
-    /* Project modal */
-    .modal-gallery {
+    .filter-option {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    
+    /* Carousel adjustments */
+    .carousel {
         height: 120px;
     }
     
-    .modal-close {
-        top: 5px;
-        right: 5px;
-        font-size: 1.3rem;
+    .carousel-image {
+        height: 120px;
     }
     
-    .modal-title {
-        font-size: 1.1rem;
+    .prev, .next {
+        font-size: 1rem;
+        width: 22px;
+        height: 22px;
     }
     
-    .modal-description {
+    /* Project links */
+    .project-link, .play-video-link {
+        padding: 5px 8px;
         font-size: 0.75rem;
+        margin-top: 5px;
+        max-width: 160px;
     }
     
-    .modal-tech {
+    /* Footer adjustments */
+    footer {
+        padding: 10px;
+    }
+    
+    .footer-content p {
         font-size: 0.7rem;
     }
-    
-    .modal-links a {
-        padding: 6px 10px;
-        font-size: 0.8rem;
-    }
 }
 
-/* ===== RETRO GAMING THEME RESPONSIVE ADJUSTMENTS ===== */
+/* ===== IMPROVED MOBILE LAYOUT FIXES ===== */
 @media screen and (max-width: 768px) {
-    /* Adjust pixel borders for smaller screens */
-    .pixel-border {
-        border-width: 3px;
+    /* Better spacing and layout for project items */
+    .project-list {
+        padding: 0 10px;
     }
     
-    /* Adjust retro buttons for smaller screens */
-    .retro-button {
-        padding: 8px 16px;
-        font-size: 0.9rem;
+    .project-item {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     
-    /* Adjust pixel corners for smaller screens */
-    .pixel-corners::before,
-    .pixel-corners::after {
-        width: 8px;
-        height: 8px;
+    .project-item:active {
+        transform: translateY(2px);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     }
     
-    /* Adjust filter buttons */
-    .filter-button.retro-button {
-        padding: 6px 12px;
-        font-size: 0.85rem;
+    /* Improve carousel navigation on mobile */
+    .carousel {
+        position: relative;
+    }
+    
+    .prev, .next {
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        border-radius: 50%;
+        color: white;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+    }
+    
+    .prev {
+        left: 10px;
+    }
+    
+    .next {
+        right: 10px;
+    }
+    
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    /* Improve dropdown styling */
+    .filter-dropdown-btn {
+        background-color: #2a2a2a;
+        color: white;
+        border: 1px solid #444;
+        cursor: pointer;
+    }
+    
+    .filter-dropdown-content {
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .filter-option {
+        color: white;
+        border-bottom: 1px solid #444;
+    }
+    
+    .filter-option:last-child {
+        border-bottom: none;
+    }
+    
+    .filter-option:hover, .filter-option.active {
+        background-color: #3a3a3a;
     }
 }
 
 @media screen and (max-width: 480px) {
-    /* Further adjust pixel borders for mobile */
-    .pixel-border {
-        border-width: 2px;
+    /* Further improvements for small screens */
+    .project-item {
+        display: flex;
+        flex-direction: column;
     }
     
-    /* Further adjust retro buttons for mobile */
-    .retro-button {
-        padding: 6px 12px;
-        font-size: 0.8rem;
+    /* Make text more readable */
+    .project-item p {
+        color: rgba(255, 255, 255, 0.9);
     }
     
-    /* Further adjust pixel corners for mobile */
-    .pixel-corners::before,
-    .pixel-corners::after {
-        width: 6px;
-        height: 6px;
+    .project-item h3 {
+        color: white;
     }
     
-    /* Adjust retro fonts for mobile */
-    .retro-text {
-        font-size: 1.2rem;
+    /* Improve spacing between elements */
+    .project-item > * + * {
+        margin-top: 6px;
     }
     
-    .pixel-text {
-        font-size: 0.9rem;
+    /* Better touch targets */
+    .project-link, .play-video-link {
+        padding: 10px 15px;
+        margin-top: 10px;
+    }
+    
+    /* Improve carousel visibility */
+    .carousel-image {
+        object-fit: cover;
+        width: 100%;
+    }
+    
+    /* Make navigation buttons more visible */
+    .prev, .next {
+        opacity: 0.9;
+        width: 32px;
+        height: 32px;
     }
 }
 
-/* ===== LOADING SCREEN RESPONSIVE ADJUSTMENTS ===== */
-@media screen and (max-width: 768px) {
-    .loading-content h1 {
-        font-size: 2rem;
+/* ===== ORIENTATION SPECIFIC STYLES ===== */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    /* Adjustments for landscape mode on small height devices */
+    .header {
+        padding: 5px 3%;
     }
     
-    .loading-bar-container {
-        width: 80%;
+    section {
+        padding: 15px 3%;
     }
     
-    .loading-text {
-        font-size: 0.9rem;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .loading-content h1 {
-        font-size: 1.6rem;
+    /* Projects page specific */
+    .project-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
-    .loading-bar-container {
-        width: 90%;
+    .project-item {
+        height: auto;
+        margin-bottom: 0;
     }
     
-    .loading-text {
-        font-size: 0.8rem;
+    .carousel {
+        height: 120px;
+    }
+    
+    .carousel-image {
+        height: 120px;
+    }
+    
+    h2 {
+        margin-bottom: 15px;
+    }
+    
+    .filter-dropdown-container {
+        margin-bottom: 15px;
     }
 }
 
@@ -685,9 +831,16 @@
     }
     
     /* Ensure filter dropdown is easy to tap */
-    .filter-dropdown {
+    .filter-dropdown-btn {
         padding: 12px;
         font-size: 16px; /* Minimum font size for inputs on iOS */
+    }
+    
+    /* Make carousel navigation easier */
+    .prev, .next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
     }
 }
 
@@ -781,48 +934,6 @@
     }
 }
 
-/* ===== ORIENTATION SPECIFIC STYLES ===== */
-@media screen and (orientation: landscape) and (max-height: 500px) {
-    /* Adjustments for landscape mode on small height devices */
-    .header {
-        padding: 5px 3%;
-    }
-    
-    section {
-        padding: 15px 3%;
-    }
-    
-    /* Projects page specific */
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-    }
-    
-    .project-card {
-        height: 160px;
-    }
-    
-    /* Project modal */
-    .project-modal-content {
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 20px;
-        max-height: 90vh;
-        overflow-y: auto;
-    }
-    
-    .modal-gallery {
-        width: 40%;
-        height: auto;
-        flex-shrink: 0;
-    }
-    
-    .modal-info {
-        width: 60%;
-    }
-}
-
 /* ===== DARK MODE SUPPORT ===== */
 @media (prefers-color-scheme: dark) {
     /* These styles will apply if the user has dark mode enabled */
@@ -847,10 +958,30 @@
         color: #ffffff;
     }
     
-    .filter-dropdown {
+    .filter-dropdown-btn {
         background-color: #2a2a2a;
-        color: #f0f0f0;
-        border-color: #444;
+        color: white;
+        border: 1px solid #444;
+        cursor: pointer;
+    }
+    
+    .filter-dropdown-content {
+        background-color: #2a2a2a;
+        border: 1px solid #444;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .filter-option {
+        color: white;
+        border-bottom: 1px solid #444;
+    }
+    
+    .filter-option:last-child {
+        border-bottom: none;
+    }
+    
+    .filter-option:hover, .filter-option.active {
+        background-color: #3a3a3a;
     }
     
     .project-modal-content {

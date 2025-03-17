@@ -91,31 +91,30 @@ document.addEventListener('DOMContentLoaded', function() {
         <!-- Mobile Dropdown Filter -->
         <div class="filter-dropdown-container">
             <button class="filter-dropdown-btn">
-                <span class="current-filter">All</span>
+                <span class="current-filter">All Projects</span>
                 <i class="fas fa-chevron-down"></i>
             </button>
             <div class="filter-dropdown-content">
-                <a href="#" data-category="all" class="filter-option active">All</a>
-                <a href="#" data-category="web" class="filter-option">Web</a>
-                <a href="#" data-category="game" class="filter-option">Game</a>
-                <a href="#" data-category="LOGO" class="filter-option">Logo</a>
-                <a href="#" data-category="Poster" class="filter-option">Poster</a>
+                <a href="#" data-category="all" class="filter-option active">All Projects</a>
+                <a href="#" data-category="game" class="filter-option">Game Development</a>
+                <a href="#" data-category="web" class="filter-option">Web Development</a>
+                <a href="#" data-category="LOGO" class="filter-option">Logo Design</a>
+                <a href="#" data-category="Poster" class="filter-option">Poster Design</a>
             </div>
         </div>
         
         <!-- Desktop Category Buttons -->
         <div class="project-categories">
-            <button class="category-btn active" onclick="filterProjects('all')">All</button>
-            <button class="category-btn" onclick="filterProjects('web')">Web</button>
-            <button class="category-btn" onclick="filterProjects('game')">Game</button>
-            <button class="category-btn" onclick="filterProjects('LOGO')">Logo</button>
-            <button class="category-btn" onclick="filterProjects('Poster')">Poster</button>
+            <button class="category-btn active" onclick="filterProjects('all')">All Projects</button>
+            <button class="category-btn" onclick="filterProjects('game')">Game Development</button>
+            <button class="category-btn" onclick="filterProjects('web')">Web Development</button>
+            <button class="category-btn" onclick="filterProjects('LOGO')">Logo Design</button>
+            <button class="category-btn" onclick="filterProjects('Poster')">Poster Design</button>
         </div>
 
-        <!-- Game Projects -->    
-        <div class="project-list"> 
-            
-            <!--Path Flex -->    
+        <!-- Project List Container -->
+        <div class="project-list">
+            <!-- Game Projects -->    
             <div class="project-item" data-category="game">
                 <div class="carousel" aria-live="polite">
                     
@@ -127,11 +126,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
                 </div>
                 <h3>Path Flex</h3>
-                <p>Navigate through dynamic obstacles, overcome challenges, and unlock new levels with precision and strategy!</p>
+                <p>Navigate through obstacles and unlock new levels with precision.</p>
                 <p>
-                    <strong>Dynamic Gameplay:</strong> Experience adaptive paths and progressively harder levels. <br>
-                    <strong>Obstacle Navigation:</strong> Maneuver through complex and interactive obstacles. <br>
-                    <strong>Code Quality:</strong> Developed with OOP principles, clean coding practices, and efficient algorithms.
+                    <strong>Dynamic Gameplay:</strong> Adaptive paths with increasing difficulty.
+                    <strong>Obstacle Navigation:</strong> Complex interactive challenges.
+                    <strong>Code Quality:</strong> Built with OOP and clean coding practices.
                 </p>
                 <p>Nov 2024 - Present</p>
                 <a href="youtube link here " target="_blank" rel="noopener noreferrer" class="play-video-link">
@@ -158,17 +157,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         
                     </div>
                     <h3>Escape Route</h3>
-                    <p>Navigate through thrilling obstacles, gather points, and test your reflexes to the limit!</p>
-                    <p><strong>Gameplay:</strong> Navigate through challenging obstacles while collecting points. <br>
-                        <strong>Levels:</strong> Progress through multiple levels with increasing difficulty. <br>
-                        <strong>Code Quality:</strong> Developed using OOP principles, clean coding practices, and optimized for performance.</p>
-                        <p>May 2024 - Nov 2024</p>
-                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7288588553888972800/" target="_blank" rel="noopener noreferrer" class="play-video-link">
-                            <i class="fas fa-play-circle"></i> Watch Gameplay
-                        </a>
-                    </div>
+                    <p>Navigate obstacles, collect points, and test your reflexes.</p>
+                    <p>
+                        <strong>Gameplay:</strong> Challenging obstacles with point collection.
+                        <strong>Levels:</strong> Multiple levels with increasing difficulty.
+                        <strong>Code Quality:</strong> OOP principles with optimized performance.
+                    </p>
+                    <p>May 2024 - Nov 2024</p>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7288588553888972800/" target="_blank" rel="noopener noreferrer" class="play-video-link">
+                        <i class="fas fa-play-circle"></i> Watch Gameplay
+                    </a>
+                </div>
                     
-                    <!-- Flappy Bird -->    
+                <!-- Flappy Bird -->    
             <div class="project-item" data-category="game">
                 <div class="carousel" aria-live="polite">
                     <img src="Images/Games/Flappy Bird/first.png" alt="Flappy Bird - Image 1" class="carousel-image active" loading="lazy" aria-hidden="false">
@@ -177,9 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button> -->
                 </div>
                 <h3>Flappy Bird</h3>
-                <p>Tap to fly and navigate through obstacles in this addictive endless arcade game!</p>
-                <p><strong>Game Mechanics:</strong> Simple yet challenging physics-based gameplay. <br>
-                    <strong>Performance:</strong> Optimized for smooth experience with minimal latency.</p>
+                <p>Tap to fly through obstacles in this addictive arcade game.</p>
+                <p>
+                    <strong>Game Mechanics:</strong> Simple yet challenging physics gameplay.
+                    <strong>Performance:</strong> Optimized for smooth experience.
+                </p>
                 <p>Oct 2023 - Nov 2023</p>
                 <a href="https://x.com/RahulWalia01/status/1777453398331400267/video/1" target="_blank" rel="noopener noreferrer" class="play-video-link">
                     <i class="fas fa-play-circle"></i> Watch Gameplay
@@ -198,15 +201,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
                                             
                 <h3>Chess Moves Calculator</h3>
-                    <p>Calculate possible chess moves | Unity</p>
-                    <p><strong>Highlight Moves:</strong> Show all legal moves by highlighting cells. <br>
-
-                    <strong>Enemy Capture:</strong> Highlight cells with capturable enemy pieces in red. <br>
-                    <strong>Code Quality:</strong> Use OOP, design patterns, and clean coding practices.</p>
-                    <p>Dec 2023 - Feb 2024</p>
-                    <a href="#" target="_blank" rel="noopener noreferrer" class="play-video-link">
-                        <i class="fas fa-info-circle"></i> View Details
-                    </a>
+                <p>Calculate possible chess moves in Unity.</p>
+                <p>
+                    <strong>Highlight Moves:</strong> Shows legal moves with cell highlights.
+                    <strong>Enemy Capture:</strong> Red highlights for capturable pieces.
+                    <strong>Code Quality:</strong> Uses OOP and design patterns.
+                </p>
+                <p>Dec 2023 - Feb 2024</p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="play-video-link">
+                    <i class="fas fa-info-circle"></i> View Details
+                </a>
             </div> 
 
 
@@ -231,9 +235,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
                     </div>
                     <h3>Blood Bank Management System</h3>
-                    <p>Comprehensive Web Application | HTML, CSS, JavaScript, PHP, Figma</p>
+                    <p>Web app for blood inventory management.</p>
+                    <p>HTML, CSS, JavaScript, PHP, Figma</p>
+                    <p>Handles donor registration and blood requests efficiently.</p>
                     <p>Nov 2023 - Mar 2024</p>
-                    <p>Developed a comprehensive Blood Bank Management System website as a key project. Leveraged HTML, CSS, JavaScript, PHP, and Figma for seamless functionality. The system facilitates efficient blood inventory management, donor registration, and blood request handling.</p>
                     <a href="#" class="project-link" target="_blank">
                         <i class="fas fa-external-link-alt"></i> View Project
                     </a>
@@ -250,9 +255,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
                     </div>
                     <h3>YouTube Clone</h3>
-                    <p>eCommerce Web Application | HTML, CSS, JavaScript</p>
+                    <p>eCommerce site with YouTube-inspired layout.</p>
+                    <p>HTML, CSS, JavaScript</p>
+                    <p>Focuses on product display and user navigation.</p>
                     <p>Mar 2024</p>
-                    <p>Created an eCommerce website inspired by YouTube's layout and functionality, focusing on product display, user engagement, and seamless navigation. Utilized modern web technologies to enhance user experience.</p>
                     <a href="#" class="project-link" target="_blank">
                         <i class="fas fa-external-link-alt"></i> View Project
                     </a>
@@ -269,9 +275,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
                     </div>
                     <h3>Logo Design Collection</h3>
-                    <p>Brand Identity | Figma, Adobe Illustrator</p>
+                    <p>Brand identity designs for various clients.</p>
+                    <p>Figma, Adobe Illustrator</p>
+                    <p>Focus on color theory and scalable designs.</p>
                     <p>Jan 2024 - Present</p>
-                    <p>Created a series of logo designs for various clients and personal projects, focusing on brand identity, visual appeal, and market relevance. Each logo is designed with careful attention to color theory, typography, and scalability.</p>
                     <a href="#" class="project-link" target="_blank">
                         <i class="fas fa-external-link-alt"></i> View Collection
                     </a>
@@ -290,9 +297,10 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="poster-text">
                             <h3>Poster Design Collection</h3>
-                            <p>Visual Communication | Adobe Photoshop, Canva</p>
+                            <p>Visual designs for events and promotions.</p>
+                            <p>Adobe Photoshop, Canva</p>
+                            <p>Created with focus on visual impact and clarity.</p>
                             <p>Feb 2024 - Present</p>
-                            <p>Designed a series of posters for events, promotions, and artistic expression. Each poster is crafted with a focus on visual impact, message clarity, and audience engagement.</p>
                             <a href="#" class="project-link" target="_blank">
                                 <i class="fas fa-external-link-alt"></i> View Collection
                             </a>
