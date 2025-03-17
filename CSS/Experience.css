@@ -24,7 +24,7 @@
 }
 
 .experience-items {
-  display: grid; /* Use grid for better responsiveness */
+ 
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
   gap: 2rem; /* Increased gap */
   max-width: 1200px;
@@ -32,6 +32,8 @@
 }
 
 .experience-item {
+  display: flex;
+  flex-direction: column;
   background-color: #252525; /* Slightly darker background */
   border-radius: 15px; /* More rounded corners */
   padding: 1.8rem; /* Increased padding */
@@ -61,7 +63,7 @@
 
 .experience-item p {
   font-size: 1.1rem;
-  color: #D0D0D0; /* Lighter text color */
+  color: white /* Lighter text color */
   margin-bottom: 1rem;
 }
 
