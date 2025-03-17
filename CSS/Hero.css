@@ -1,0 +1,251 @@
+:root {
+    --primary-color: #0095B7;
+    --hover-color: rgb(140, 222, 242);
+}
+
+/* Hero Section Styles */
+.hero {
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content vertically and horizontally */
+    color: #F0F0F0; /* Fallback color if image doesn't load */
+    position: relative;
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Prevents content from overflowing */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .top-line {
+    width: 100%;
+    height: 5px;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically by default */
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    z-index: 1;
+    padding: 2rem; /* Add some padding */
+    max-width: 1200px; /* Limit width on larger screens */
+    margin: 0 auto;  /* Center the content */
+}
+
+.text-content {
+    text-align: center; /* Center text */
+    margin-bottom: 2rem; /* Space between text and image */
+}
+
+
+.profile-photo img {
+    max-width: 350px; /* Slightly smaller image */
+    border-radius: 5%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+/* Typography (Typing Animation for h1 and h2) */
+/* ... (your existing typing animation CSS) ... */
+
+.hero h1 {
+    /* ... (your existing h1 styles) ... */
+    text-align: center; /* Center the h1 */
+    color: white;
+    
+}
+
+.hero h2 {
+    /* ... (your existing h2 styles) ... */
+    text-align: center; /* Center the h2 */
+}
+
+.hero p {
+    font-size: 1.1rem; /* Adjusted font size */
+    margin-bottom: 1.5rem; /* Adjusted margin */
+    font-weight: 300;
+    color: white;
+    line-height: 1.6; /* Improved line height */
+    text-align: center; /* Center the paragraph */
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8rem 1.8rem; /* Adjusted padding */
+    margin-top: 1.5rem; /* Adjusted margin */
+    text-decoration: none;
+    border-radius: 8px; /* More rounded corners */
+    font-size: 1rem; /* Adjusted font size */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s; /* Smooth transitions */
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    margin-left: 1rem; /* Adjusted margin */
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: var(--hover-color);
+    color: #ffffff;
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow on hover */
+}
+
+/* Social Links */
+.social-links-hero {
+    margin-top: 1.5rem; /* Adjusted margin */
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the links */
+    gap: 1.5rem; /* Adjusted gap */
+}
+
+.social-links-hero a {
+    color: var(--primary-color);
+    font-size: 2rem;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-links-hero a:hover {
+    color: var(--hover-color);
+    transform: scale(1.1);
+}
+
+/* Responsive Design (Improved) */
+@media (max-width: 992px) {
+    .hero {
+        height: auto; /* Allow hero to take its natural height */
+        padding: 3rem 1rem; /* Adjusted padding */
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .text-content {
+        margin-bottom: 1.5rem;
+    }
+
+    .profile-photo img {
+        max-width: 300px;
+        margin-top: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 4vw, 2.8rem); /* Adjusted font size */
+    }
+
+    .hero h2 {
+        font-size: clamp(1.5rem, 3vw, 1.7rem); /* Adjusted font size */
+    }
+
+    .hero p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.95rem;
+        padding: 0.7rem 1.6rem;
+    }
+
+    .social-links-hero {
+        flex-direction: row; /* Horizontal on smaller screens */
+        gap: 1rem;
+    }
+
+    .social-links-hero a {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem); /* Adjusted font size */
+    }
+
+    .hero h2 {
+        font-size: clamp(1.3rem, 3vw, 1.6rem); /* Adjusted font size */
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.9rem;
+    }
+
+    .social-links-hero a {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: clamp(1.6rem, 4vw, 2.2rem); /* Adjusted font size */
+    }
+
+    .hero h2 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem); /* Adjusted font size */
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.4rem;
+    }
+
+    .social-links-hero a {
+        font-size: 1.3rem;
+    }
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+   
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,723 @@
+/* Retro Gaming Theme CSS */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --primary-color: #6a5acd; /* Slate blue instead of green */
+    --secondary-color: #9370db; /* Medium purple instead of magenta */
+    --accent-color: #4169e1; /* Royal blue instead of yellow */
+    --bg-dark: #1a1a2e; /* Dark blue background instead of black */
+    --text-light: #ffffff; /* White text */
+    --text-muted: #a9a9a9; /* Gray text */
+    --pixel-border: 4px solid #ffffff; /* Pixel-style border */
+    --shadow-retro: 0 0 10px rgba(106, 90, 205, 0.7); /* Blue glow instead of green */
+}
+
+/* Global Styles */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'VT323', monospace;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+.header {
+    background-color: rgba(26, 26, 46, 0.8);
+    border-bottom: 2px solid var(--primary-color);
+    padding: 10px 20px;
+}
+
+.header h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 0 #000;
+}
+
+.logo {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.menu li a {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: var(--text-light);
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+.menu li a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+.top-line {
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    margin-bottom: 20px;
+}
+
+.hero-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.text-content h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: 3px 3px 0 #000;
+    animation: textGlow 2s infinite alternate;
+}
+
+.text-content h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #000;
+}
+
+.text-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    max-width: 600px;
+    color: var(--text-light);
+}
+
+.btn-secondary {
+    font-family: 'Press Start 2P', cursive;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: transparent;
+    color: var(--primary-color);
+    text-decoration: none;
+    border: 2px solid var(--primary-color);
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.profile-photo img {
+    border: 4px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-color);
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    image-rendering: pixelated;
+}
+
+/* Section Styles */
+section {
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+section h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 24px;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 0 #000;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+/* About Section */
+#about {
+    background-color: rgba(26, 26, 46, 0.7);
+    border: 2px solid var(--primary-color);
+    margin: 20px;
+    padding: 30px;
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(45deg, transparent 90%, var(--primary-color) 90%, var(--primary-color) 100%),
+        linear-gradient(-45deg, transparent 90%, var(--primary-color) 90%, var(--primary-color) 100%);
+    background-size: 20px 20px;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Experience Section */
+#experience {
+    background-color: rgba(26, 26, 46, 0.7);
+    border: 2px solid var(--secondary-color);
+    margin: 20px;
+    padding: 30px;
+}
+
+.experience-item {
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.experience-item::before {
+    content: '►';
+    position: absolute;
+    left: -12px;
+    top: 0;
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+
+.experience-item h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+#projects {
+    background-color: rgba(26, 26, 46, 0.7);
+    border: 2px solid var(--accent-color);
+    margin: 20px;
+    padding: 30px;
+}
+
+.project-categories {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background-color: rgba(26, 26, 46, 0.6);
+    padding: 15px;
+    border: 2px solid var(--accent-color);
+}
+
+.category-btn {
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--accent-color);
+    padding: 8px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+.project-item {
+    background-color: rgba(26, 26, 46, 0.8);
+    border: 2px solid var(--accent-color);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.project-item h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.project-item a {
+    display: inline-block;
+    background-color: rgba(65, 105, 225, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.project-item a:hover {
+    background-color: #ffffff;
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.project-item a i {
+    margin-right: 8px;
+}
+
+.carousel {
+    border: 2px solid var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.play-video-btn {
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 2px solid var(--accent-color);
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.play-video-btn:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-dark);
+}
+
+/* Explore More Button */
+.explore-more {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.explore-more-btn {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.explore-more-btn:hover {
+    background-color: #ffffff;
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Education Section */
+#education {
+    background-color: rgba(26, 26, 46, 0.7);
+    border: 2px solid var(--primary-color);
+    margin: 20px;
+    padding: 30px;
+}
+
+.education-item {
+    border: 2px solid var(--primary-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.education-item h3 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: rgba(26, 26, 46, 0.7);
+    border: 2px solid var(--secondary-color);
+    margin: 20px;
+    padding: 30px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: rgba(26, 26, 46, 0.8);
+    border: 2px solid var(--secondary-color);
+    color: var(--text-light);
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-family: 'VT323', monospace;
+    font-size: 18px;
+}
+
+.contact-form button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    padding: 12px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--bg-dark);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(26, 26, 46, 0.8);
+    border-top: 2px solid var(--primary-color);
+    padding: 20px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* Animations */
+@keyframes textGlow {
+    from {
+        text-shadow: 0 0 5px var(--primary-color);
+    }
+    to {
+        text-shadow: 0 0 15px var(--primary-color), 0 0 30px var(--primary-color);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .text-content h1 {
+        font-size: 22px;
+    }
+    
+    .text-content h2 {
+        font-size: 14px;
+    }
+    
+    .profile-photo img {
+        max-width: 200px;
+    }
+    
+    section h2 {
+        font-size: 20px;
+    }
+    
+    .btn-secondary {
+        font-size: 12px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .text-content h1 {
+        font-size: 18px;
+    }
+    
+    .text-content h2 {
+        font-size: 12px;
+    }
+    
+    .profile-photo img {
+        max-width: 150px;
+    }
+    
+    section h2 {
+        font-size: 16px;
+    }
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-dark);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s;
+}
+
+.loading-content {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+}
+
+.loading-content h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.loading-bar-container {
+    width: 100%;
+    height: 30px;
+    background-color: #111;
+    border: 4px solid var(--primary-color);
+    padding: 4px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.loading-bar {
+    height: 100%;
+    width: 0%;
+    background-color: var(--primary-color);
+    transition: width 0.2s;
+}
+
+.loading-text {
+    font-family: 'Press Start 2P', cursive;
+    color: var(--text-light);
+    font-size: 16px;
+    opacity: 0;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49% {
+        opacity: 0;
+    }
+    50%, 100% {
+        opacity: 1;
+    }
+}
+
+/* Pixel Art Decorations */
+.pixel-decoration {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9995;
+}
+
+.pixel-star {
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%,
+        2% 35%, 39% 35%
+    );
+    animation: twinkle 3s infinite alternate;
+}
+
+.pixel-star-1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.pixel-star-2 {
+    top: 25%;
+    right: 15%;
+    animation-delay: 0.5s;
+}
+
+.pixel-star-3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 1s;
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+.pixel-pacman {
+    width: 30px;
+    height: 30px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    clip-path: polygon(
+        0% 0%, 100% 0%, 100% 100%, 0% 100%,
+        0% 50%, 50% 100%, 100% 50%, 50% 0%
+    );
+    animation: chomp 0.5s steps(2) infinite, move 15s linear infinite;
+    bottom: 50px;
+    left: -30px;
+}
+
+@keyframes chomp {
+    0% {
+        clip-path: polygon(
+            0% 0%, 100% 0%, 100% 100%, 0% 100%,
+            0% 50%, 50% 100%, 100% 50%, 50% 0%
+        );
+    }
+    50% {
+        clip-path: polygon(
+            0% 0%, 100% 0%, 100% 100%, 0% 100%
+        );
+    }
+}
+
+@keyframes move {
+    0% {
+        left: -30px;
+    }
+    100% {
+        left: calc(100% + 30px);
+    }
+}
+
+.pixel-ghost {
+    width: 30px;
+    height: 30px;
+    background-color: var(--secondary-color);
+    border-radius: 15px 15px 0 0;
+    position: fixed;
+    bottom: 50px;
+    left: -60px;
+    animation: moveGhost 20s linear infinite;
+}
+
+.pixel-ghost::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: var(--secondary-color);
+    clip-path: polygon(
+        0% 0%, 20% 100%, 40% 0%, 60% 100%, 80% 0%, 100% 100%, 100% 0%
+    );
+}
+
+@keyframes moveGhost {
+    0% {
+        left: -60px;
+    }
+    100% {
+        left: calc(100% + 60px);
+    }
+}
+
+/* Blinking text */
+.blink {
+    animation: blink 1s infinite;
+}
+
+.continue-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    color: var(--accent-color);
+    margin-left: 20px;
+}
+
+/* Add pixelated borders to images */
+img {
+    image-rendering: pixelated;
+}
+
+/* Add CRT screen curvature */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        transparent 60%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    pointer-events: none;
+    z-index: 9990;
+}
+
+/* Add more retro styling to buttons */
+button, .btn-secondary {
+    position: relative;
+    overflow: visible;
+}
+
+button::before, .btn-secondary::before {
+    content: ">";
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+button:hover::before, .btn-secondary:hover::before {
+    opacity: 1;
+}
+
+/* Add pixelated box shadows */
+.project-item, .education-item, .experience-item {
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* Add retro scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border: 1px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Add retro selection style */
+::selection {
+    background-color: var(--primary-color);
+    color: #fff;
+} 

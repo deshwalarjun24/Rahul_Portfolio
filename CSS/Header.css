@@ -1,0 +1,244 @@
+/* Header Styles */
+.header {
+  position: sticky;
+  top: 0;
+  height: 70px; /* Slightly smaller header height */
+  width: 100%;
+  background-color: #151418;
+  z-index: 1000;
+  display: flex; /* Use flexbox for centering */
+  justify-content: center;
+  align-items: center; /* Vertically center content */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  transition: background-color 0.3s ease; /* Smooth transition for background */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; /* Adjusted padding */
+  width: 100%; /* Ensure nav takes full width */
+  max-width: 1200px; /* Set a maximum width for larger screens */
+  margin: 0 auto; /* Center the nav */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Adjusted gap */
+  flex-direction: row; /* Ensure items are in a row */
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 40px; /* Adjusted logo size */
+  width: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  transform: scaleX(-1); /* Flip the image horizontally */
+}
+
+.logo img:hover {
+  transform: scaleX(-1) scale(1.1); /* Keep the flip and add scale on hover */
+}
+
+.logo h1 {
+  font-size: 1.5rem; /* Adjusted font size */
+  color: #fff;
+  margin: 0;
+  font-weight: 500; /* Slightly less bold */
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.menu a {
+  color: #0095B7;
+  text-decoration: none;
+  padding: 0.5rem 1rem; /* Adjusted padding */
+  margin: 0 0.5rem; /* Add some margin between links */
+  border-radius: 5px; /* Add rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+}
+
+.menu a:hover,
+.menu a.active { /* Style for active link (add .active class to the current link) */
+  color: #007B9A; /* Darker teal on hover/active */
+  background-color: rgba(0, 150, 183, 0.1);  /* Subtle background on hover/active */
+}
+
+
+.menu-icon {
+  display: none;
+  color: #fff;
+  font-size: 1.8rem; /* Adjusted icon size */
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Media Query for Responsiveness */
+@media only screen and (max-width: 950px) {
+  .menu {
+      flex-direction: column;
+      background-color: #151418;
+      position: absolute;
+      top: 70px; /* Adjust top value if header height changes */
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      transform: scale(1, 0); /* Initially hidden */
+      transform-origin: top;
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to the menu */
+  }
+
+  .menu a {
+      display: block; /* Make links stack vertically */
+      padding: 1rem; /* Increased padding */
+      margin: 0; /* Remove horizontal margins */
+      text-align: center; /* Center the text */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add a separator line */
+  }
+
+  .menu a:last-child {
+      border-bottom: none; /* Remove separator from the last link */
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  #menu-toggle:checked ~ .menu {
+      transform: scale(1, 1); /* Show menu when checked */
+  }
+}
+
+/* Add responsive styles for the logo */
+@media (max-width: 768px) {
+  .logo a {
+    gap: 0.5rem; /* Reduce gap on smaller screens */
+  }
+  
+  .logo img {
+    height: 35px; /* Slightly smaller logo on mobile */
+  }
+  
+  .logo h1 {
+    font-size: 1.2rem; /* Smaller font size on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 1rem; /* Even smaller font size on very small screens */
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: #151418; /* Consistent background */
+  color: #fff;
+  padding: 2rem; /* Adjusted padding */
+  text-align: center;
+  font-size: 0.9rem; /* Slightly smaller font size */
+}
+
+.footer-content {
+  max-width: 600px; /* Limit the width of the content */
+  margin: 0 auto; /* Center the content */
+}
+
+.footer-content p {
+  margin: 0.5rem 0; /* Adjusted margin */
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0; /* Adjusted margin */
+  display: flex;
+  justify-content: center; /* Center the icons */
+  gap: 1rem; /* Adjusted gap */
+}
+
+.social-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem; /* Adjusted icon size */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.social-links li a:hover {
+  color: #0095B7; /* Teal on hover */
+  transform: scale(1.1); /* Scale up slightly on hover */
+}
+
+@media (max-width: 768px) {
+  .social-links {
+      flex-direction: row; /* Keep icons in a row on smaller screens */
+      justify-content: center; /* Center the icons */
+  }
+}
+
+/* MacBook Specific Responsive Styles */
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+    /* MacBook Air and smaller MacBook Pro */
+    nav {
+        max-width: 1200px;
+    }
+    
+    .menu a {
+        padding: 0.5rem 0.8rem;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+    /* Larger MacBook Pro and iMac */
+    nav {
+        max-width: 1400px;
+        padding: 0 3rem;
+    }
+    
+    .menu a {
+        padding: 0.5rem 1.2rem;
+        margin: 0 0.7rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.7rem;
+    }
+    
+    .logo img {
+        height: 45px;
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance:none) {
+    .header {
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo img {
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+}

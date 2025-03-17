@@ -1,0 +1,90 @@
+/* About Section Styles */
+.about {
+    background-color: #000; /* Consistent background color */
+    padding: 60px 120px;
+    text-align: center;
+    border-top: 5px solid #008C94; /* Teal color for consistency */
+    border-bottom: 5px solid #516F70; /* Light teal color for subtle contrast */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7); /* Shadow effect for depth */
+    height: auto;
+}
+
+.about h2, .about h3 {
+    font-size: 3.5rem; /* Large font size for headers */
+    margin-bottom: 1rem;
+    color: #0095B7; /* Teal */
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.about-flex {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-image {
+    max-width: 250px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Consistent shadow effect */
+}
+
+.about p {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2rem; /* Slightly smaller font for paragraph consistency */
+    margin: 0 20px;
+    color: #ffffff; /* Light teal for better readability */
+}
+
+/* About Section Responsive Adjustments */
+@media (max-width: 1024px) {
+    .about h2, .about h3 {
+        font-size: 2rem; /* Reduced header font size for mobile */
+    }
+
+    .about-image {
+        max-width: 200px; /* Slightly smaller images */
+        margin: 10px; /* Reduced margin around the image */
+    }
+
+    .about p {
+        font-size: 1rem; /* Smaller font for paragraphs */
+        text-align: center; /* Center-align text on smaller screens */
+        color: #FFFFFF; /* White text for better readability */
+        margin: 0 10px; /* Reduced margin for mobile view */
+    }
+
+    .about-flex {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center items horizontally */
+        gap: 20px; /* Space out the elements vertically */
+    }
+}
+
+/* About Section Responsive Adjustments for Very Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .about {
+        padding: 40px 15px; /* Reduced padding for very small screens */
+    }
+
+    .about h2, .about h3 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+    }
+
+    .about-image {
+        max-width: 180px; /* Further reduce image size */
+    }
+
+    .about p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        margin: 0 5px; /* Further reduce margin */
+    }
+
+    .about-flex {
+        gap: 15px; /* Further reduced gap between elements */
+    }
+}

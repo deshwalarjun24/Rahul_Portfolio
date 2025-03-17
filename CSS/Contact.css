@@ -1,0 +1,231 @@
+/* Contact Section Styles */
+#contact {
+    background-color: #1E1E1E; /* Darker background */
+    padding: 3rem 2rem; /* Adjusted padding */
+    color: #ffffff;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #008C94; /* Teal color */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-line {
+    width: 60px;
+    height: 4px;
+    background-color: #008C94;
+    margin: 0 auto 2rem;
+    border-radius: 2px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Responsive grid */
+    gap: 3rem; /* Increased gap */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content */
+    padding: 0 1rem; /* Add some padding */
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem; /* Slightly larger font size */
+    color: #D0D0D0;
+}
+
+.contact-info i {
+    margin-right: 1rem;
+    color: #008C94; /* Teal color for icons */
+    font-size: 1.3rem; /* Slightly larger icons */
+}
+
+.contact-info a {
+    color: #008C94; /* Teal color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #005F68; /* Darker teal on hover */
+    text-decoration: underline;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem; /* Add some padding */
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #008C94; /* Teal color for labels */
+    font-size: 1.1rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #444; /* Slightly darker border */
+    border-radius: 8px; /* More rounded corners */
+    background-color: #252525; /* Darker background */
+    color: #EEEEEE; /* Lighter text color */
+    font-size: 1rem;
+    transition: border-color 0.3s ease; /* Smooth border color transition */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #008C94; /* Teal border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 140, 148, 0.3);  /* Subtle teal glow on focus */
+}
+
+textarea {
+    height: 120px; /* Increased height for textarea */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+button {
+    padding: 1rem 2rem;
+    background-color: #008C94; /* Teal button */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; /* More rounded corners */
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 500; /* Slightly bolder font */
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+    background-color: #005F68; /* Darker teal on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+.social-media {
+    display: flex;
+    justify-content: left; /* Align icons to the left */
+    margin-top: 1.5rem; /* Add some top margin */
+}
+
+.social-icon {
+    color: #EEEEEE; /* Lighter icon color */
+    font-size: 2rem;
+    margin-right: 1.5rem; /* Increased spacing between icons */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #008C94; /* Teal on hover */
+    transform: scale(1.1);
+}
+
+/* Responsive Design (Improved) */
+@media (max-width: 1200px) {
+    .contact-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust minmax */
+    }
+}
+
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr; /* Stack on smaller screens */
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 0; /* Remove padding on smaller screens */
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 0.95rem;
+    }
+
+    button {
+        font-size: 1rem;
+    }
+
+    .social-icon {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info p {
+        font-size: 0.9rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.95rem;
+    }
+
+    .social-icon {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-info p {
+        font-size: 0.85rem;
+    }
+
+    label {
+        font-size: 0.85rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        font-size: 0.85rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
+
+    .social-icon {
+        font-size: 1.3rem;
+    }
+}
+

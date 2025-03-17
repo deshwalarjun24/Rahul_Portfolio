@@ -1,0 +1,155 @@
+/* Project Filter Styles */
+
+/* Desktop Category Buttons */
+.project-categories {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    background-color: #005F68; /* Darker Teal */
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    padding: 0.6rem 1.2rem;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.category-btn:hover::before {
+    left: 100%;
+}
+
+.category-btn:hover,
+.category-btn.active {
+    background-color: #008C94; /* Medium Teal on hover and active */
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Dropdown Filter */
+.filter-dropdown-container {
+    display: none;
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+    z-index: 5;
+}
+
+.filter-dropdown-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    background-color: #005F68;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.filter-dropdown-btn:hover,
+.filter-dropdown-btn.active {
+    background-color: #008C94;
+}
+
+.filter-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #2A2B2D;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    margin-top: 0.5rem;
+    overflow: hidden;
+}
+
+.filter-dropdown-content.show {
+    display: block;
+    animation: fadeInDown 0.3s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.filter-option {
+    display: block;
+    padding: 0.8rem 1.2rem;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.filter-option:hover,
+.filter-option.active {
+    background-color: #008C94;
+}
+
+/* Responsive Filter Display */
+@media (max-width: 768px) {
+    .project-categories {
+        display: none;
+    }
+    
+    .filter-dropdown-container {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .project-categories {
+        display: flex;
+    }
+    
+    .filter-dropdown-container {
+        display: none;
+    }
+}
+
+/* MacBook-specific adjustments for filter dropdown */
+@media screen and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), 
+       screen and (max-width: 768px) and (min-resolution: 192dpi) {
+    .filter-dropdown-container {
+        max-width: 280px; /* Slightly smaller on Retina displays */
+    }
+    
+    .filter-dropdown-btn {
+        padding: 0.7rem 1rem;
+    }
+} 

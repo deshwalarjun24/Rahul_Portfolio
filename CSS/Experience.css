@@ -1,0 +1,165 @@
+/* Experience Section Styles */
+#experience {
+  background-color: #1E1E1E;
+  padding: 3rem 2rem; /* Adjusted padding */
+  border-bottom: 5px solid #008C94;
+  color: #ffffff;
+  overflow: hidden; /* Prevents content from overflowing */
+}
+
+#experience h2 {
+  font-size: 2.8rem; /* Slightly smaller heading */
+  color: #008C94;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  text-transform: uppercase; /* Consistent uppercase */
+}
+
+.section-line {
+  width: 60px; /* Slightly wider line */
+  height: 4px; /* Slightly thicker line */
+  margin: 0 auto 2rem; /* Adjusted margin */
+  background-color: #008C94;
+  border-radius: 2px; /* Rounded corners for the line */
+}
+
+.experience-items {
+  display: grid; /* Use grid for better responsiveness */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 2rem; /* Increased gap */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  background-color: #252525; /* Slightly darker background */
+  border-radius: 15px; /* More rounded corners */
+  padding: 1.8rem; /* Increased padding */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Prevents content overflow */
+  position: relative; /* For potential overlay effects */
+}
+
+.experience-item:hover {
+  transform: translateY(-8px); /* Increased lift on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Darker shadow on hover */
+}
+
+.experience-item h3 {
+  font-size: 1.6rem;
+  color: #F5F5F5; /* Slightly lighter heading color */
+  margin-bottom: 0.8rem;
+}
+
+.experience-item .company {
+  font-weight: normal; /* Company name not bold */
+  color: #008C94;
+  margin-left: 0.5rem; /* Add some spacing */
+}
+
+
+.experience-item p {
+  font-size: 1.1rem;
+  color: #D0D0D0; /* Lighter text color */
+  margin-bottom: 1rem;
+}
+
+.experience-item ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.experience-item ul li {
+  font-size: 1rem;
+  color: #A0A0A0; /* Even lighter list item color */
+  margin-bottom: 0.5rem; /* Add space between list items */
+  position: relative; /* For potential icon placement */
+  padding-left: 1.5rem; /* Space for icon */
+}
+
+.experience-item ul li::before { /* Example: Add a bullet point icon */
+  content: "•";  /* Or use an image: content: url("path/to/icon.png"); */
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #008C94; /* Teal color for the icon */
+}
+
+.experience-item strong {
+  color: #008C94;
+}
+
+/* Responsive Design (Improved) */
+@media (max-width: 1200px) {
+  .experience-items {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax */
+  }
+}
+
+@media (max-width: 992px) {
+  .experience-items {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust minmax */
+  }
+
+  #experience h2 {
+      font-size: 2.5rem;
+  }
+
+  .experience-item {
+      padding: 1.5rem;
+  }
+
+  .experience-item h3 {
+      font-size: 1.5rem;
+  }
+
+  .experience-item p {
+      font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #experience h2 {
+      font-size: 2.2rem;
+  }
+
+  .experience-item {
+      padding: 1.2rem;
+  }
+
+  .experience-item h3 {
+      font-size: 1.4rem;
+  }
+
+  .experience-item p {
+      font-size: 1rem;
+  }
+
+  .experience-item ul li {
+      font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #experience h2 {
+      font-size: 2rem;
+  }
+
+  .experience-item {
+      padding: 1rem;
+  }
+
+  .experience-item h3 {
+      font-size: 1.3rem;
+  }
+
+  .experience-item p {
+      font-size: 0.9rem;
+  }
+
+  .experience-item ul li {
+      font-size: 0.9rem;
+  }
+}

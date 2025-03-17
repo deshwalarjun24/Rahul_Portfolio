@@ -1,0 +1,891 @@
+/* IndexResponsive.css - Comprehensive responsive styles for index.html */
+
+/* ===== GLOBAL RESPONSIVE STYLES ===== */
+@media screen and (max-width: 1440px) {
+    /* Large desktop screens */
+    section {
+        padding: 60px 8%;
+    }
+    
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    h2 {
+        font-size: 2.4rem;
+    }
+    
+    h3 {
+        font-size: 1.8rem;
+    }
+    
+    p {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* Medium desktop screens */
+    section {
+        padding: 50px 6%;
+    }
+    
+    .container {
+        max-width: 1000px;
+    }
+    
+    /* Hero section adjustments */
+    .hero-content {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    /* About section adjustments */
+    .about-content {
+        gap: 30px;
+    }
+    
+    /* Skills section adjustments */
+    .skills-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Projects section adjustments */
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Experience section adjustments */
+    .timeline-container {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* Small desktop / Large tablet screens */
+    section {
+        padding: 40px 5%;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2.2rem;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+    }
+    
+    /* Hero section adjustments */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    /* About section adjustments */
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-image {
+        max-width: 350px;
+        margin: 0 auto 30px;
+    }
+    
+    /* Skills section adjustments */
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    /* Projects section adjustments */
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Experience section adjustments */
+    .timeline-container {
+        max-width: 95%;
+    }
+    
+    /* Education section adjustments */
+    .education-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .education-card {
+        width: 100%;
+        max-width: 450px;
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Tablet screens */
+    section {
+        padding: 35px 4%;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    p {
+        font-size: 0.95rem;
+    }
+    
+    /* Header/Navigation adjustments */
+    .header {
+        padding: 15px 4%;
+    }
+    
+    .logo h1 {
+        font-size: 1.6rem;
+    }
+    
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .menu-icon {
+        display: block;
+    }
+    
+    .menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        align-items: center;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        z-index: 1000;
+    }
+    
+    .menu.open {
+        max-height: 500px;
+    }
+    
+    .menu li {
+        margin: 15px 0;
+    }
+    
+    /* Hero section adjustments */
+    .hero-content {
+        gap: 20px;
+    }
+    
+    .hero-image {
+        max-width: 300px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-buttons a {
+        width: 100%;
+        max-width: 200px;
+        margin: 10px 0;
+    }
+    
+    /* About section adjustments */
+    .about-image {
+        max-width: 280px;
+    }
+    
+    /* Skills section adjustments */
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Projects section adjustments */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    /* Experience section adjustments */
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+    
+    .left::after, .right::after {
+        left: 15px;
+    }
+    
+    .right {
+        left: 0%;
+    }
+    
+    /* Contact section adjustments */
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .contact-form, .contact-info {
+        width: 100%;
+    }
+    
+    .contact-info {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    /* Large mobile screens */
+    section {
+        padding: 30px 3%;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    p {
+        font-size: 0.9rem;
+    }
+    
+    /* Header/Navigation adjustments */
+    .header {
+        padding: 12px 3%;
+    }
+    
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+    
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* Hero section adjustments */
+    .hero-image {
+        max-width: 250px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    /* About section adjustments */
+    .about-image {
+        max-width: 240px;
+    }
+    
+    /* Skills section adjustments */
+    .skill-item {
+        padding: 15px;
+    }
+    
+    .skill-icon {
+        font-size: 2rem;
+    }
+    
+    /* Projects section adjustments */
+    .project-card {
+        padding: 15px;
+    }
+    
+    /* Experience section adjustments */
+    .timeline-container {
+        padding-left: 60px;
+    }
+    
+    .timeline::after {
+        left: 21px;
+    }
+    
+    .timeline-container::before {
+        left: 50px;
+    }
+    
+    .left::after, .right::after {
+        left: 5px;
+    }
+    
+    /* Contact section adjustments */
+    .contact-form input, 
+    .contact-form textarea {
+        padding: 10px;
+    }
+    
+    .contact-form button {
+        padding: 10px 20px;
+    }
+    
+    .social-links a {
+        margin: 0 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Medium mobile screens */
+    section {
+        padding: 25px 3%;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    p {
+        font-size: 0.85rem;
+    }
+    
+    /* Header/Navigation adjustments */
+    .header {
+        padding: 10px 3%;
+    }
+    
+    .logo h1 {
+        font-size: 1.3rem;
+    }
+    
+    .logo img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* Hero section adjustments */
+    .hero-image {
+        max-width: 220px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* About section adjustments */
+    .about-image {
+        max-width: 200px;
+    }
+    
+    /* Skills section adjustments */
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .skill-item {
+        padding: 12px;
+    }
+    
+    .skill-icon {
+        font-size: 1.8rem;
+    }
+    
+    /* Projects section adjustments */
+    .project-card {
+        padding: 12px;
+    }
+    
+    .project-title {
+        font-size: 1.2rem;
+    }
+    
+    /* Experience section adjustments */
+    .timeline-container {
+        padding-left: 50px;
+        padding-right: 15px;
+    }
+    
+    .timeline::after {
+        left: 11px;
+    }
+    
+    .timeline-container::before {
+        left: 40px;
+    }
+    
+    .left::after, .right::after {
+        width: 20px;
+        height: 20px;
+        left: 1px;
+    }
+    
+    /* Contact section adjustments */
+    .contact-form input, 
+    .contact-form textarea {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .contact-form button {
+        padding: 8px 16px;
+    }
+    
+    .social-links a {
+        margin: 0 6px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    /* Small mobile screens */
+    section {
+        padding: 20px 3%;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.1rem;
+    }
+    
+    p {
+        font-size: 0.8rem;
+    }
+    
+    /* Header/Navigation adjustments */
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logo img {
+        width: 25px;
+        height: 25px;
+    }
+    
+    /* Hero section adjustments */
+    .hero-image {
+        max-width: 180px;
+    }
+    
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* About section adjustments */
+    .about-image {
+        max-width: 180px;
+    }
+    
+    /* Skills section adjustments */
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    /* Projects section adjustments */
+    .project-card {
+        padding: 10px;
+    }
+    
+    .project-title {
+        font-size: 1.1rem;
+    }
+    
+    /* Experience section adjustments */
+    .timeline-container {
+        padding-left: 45px;
+        padding-right: 10px;
+    }
+    
+    /* Contact section adjustments */
+    .contact-form button {
+        width: 100%;
+    }
+    
+    .social-links a {
+        margin: 0 5px;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    /* Extra small mobile screens */
+    section {
+        padding: 15px 2%;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.3rem;
+    }
+    
+    h3 {
+        font-size: 1rem;
+    }
+    
+    p {
+        font-size: 0.75rem;
+    }
+    
+    /* Header/Navigation adjustments */
+    .header {
+        padding: 8px 2%;
+    }
+    
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+    
+    .logo img {
+        width: 22px;
+        height: 22px;
+    }
+    
+    /* Hero section adjustments */
+    .hero-image {
+        max-width: 160px;
+    }
+    
+    .hero-title {
+        font-size: 1.3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    /* About section adjustments */
+    .about-image {
+        max-width: 160px;
+    }
+    
+    /* Skills section adjustments */
+    .skill-item {
+        padding: 10px;
+    }
+    
+    .skill-icon {
+        font-size: 1.6rem;
+    }
+    
+    /* Projects section adjustments */
+    .project-card {
+        padding: 8px;
+    }
+    
+    .project-title {
+        font-size: 1rem;
+    }
+    
+    /* Experience section adjustments */
+    .timeline-container {
+        padding-left: 40px;
+        padding-right: 8px;
+    }
+    
+    /* Contact section adjustments */
+    .contact-form input, 
+    .contact-form textarea {
+        padding: 6px;
+        margin-bottom: 8px;
+    }
+    
+    .contact-form button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .social-links a {
+        margin: 0 4px;
+        font-size: 1rem;
+    }
+}
+
+/* ===== RETRO GAMING THEME RESPONSIVE ADJUSTMENTS ===== */
+@media screen and (max-width: 768px) {
+    /* Adjust pixel borders for smaller screens */
+    .pixel-border {
+        border-width: 3px;
+    }
+    
+    /* Adjust retro buttons for smaller screens */
+    .retro-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Adjust pixel corners for smaller screens */
+    .pixel-corners::before,
+    .pixel-corners::after {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjust pixel borders for mobile */
+    .pixel-border {
+        border-width: 2px;
+    }
+    
+    /* Further adjust retro buttons for mobile */
+    .retro-button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    /* Further adjust pixel corners for mobile */
+    .pixel-corners::before,
+    .pixel-corners::after {
+        width: 6px;
+        height: 6px;
+    }
+    
+    /* Adjust retro fonts for mobile */
+    .retro-text {
+        font-size: 1.2rem;
+    }
+    
+    .pixel-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== LOADING SCREEN RESPONSIVE ADJUSTMENTS ===== */
+@media screen and (max-width: 768px) {
+    .loading-content h1 {
+        font-size: 2rem;
+    }
+    
+    .loading-bar-container {
+        width: 80%;
+    }
+    
+    .loading-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .loading-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .loading-bar-container {
+        width: 90%;
+    }
+    
+    .loading-text {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) {
+    /* Optimize for touch devices */
+    a, button {
+        padding: 12px; /* Larger touch targets */
+    }
+    
+    .menu li a {
+        padding: 15px 10px;
+    }
+    
+    /* Remove hover effects and replace with active states */
+    .project-card:hover .project-overlay,
+    .skill-item:hover,
+    .education-card:hover,
+    .social-links a:hover {
+        transform: none;
+    }
+    
+    .project-card:active .project-overlay,
+    .skill-item:active,
+    .education-card:active,
+    .social-links a:active {
+        transform: scale(0.98);
+    }
+}
+
+/* ===== HIGH RESOLUTION SCREENS ===== */
+@media screen and (min-width: 1921px) {
+    /* For 4K and higher resolution screens */
+    body {
+        font-size: 18px;
+    }
+    
+    .container {
+        max-width: 1800px;
+    }
+    
+    section {
+        padding: 80px 10%;
+    }
+    
+    h1 {
+        font-size: 3.5rem;
+    }
+    
+    h2 {
+        font-size: 3rem;
+    }
+    
+    h3 {
+        font-size: 2.2rem;
+    }
+}
+
+/* ===== PRINT MEDIA ===== */
+@media print {
+    /* Optimize for printing */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        background: white !important;
+        color: black !important;
+    }
+    
+    .header, .loading-screen, .hero-buttons, .contact-form, footer {
+        display: none !important;
+    }
+    
+    section {
+        page-break-inside: avoid;
+        padding: 20px 0;
+    }
+    
+    a {
+        text-decoration: underline;
+        color: black !important;
+    }
+    
+    img {
+        max-width: 100% !important;
+    }
+    
+    @page {
+        margin: 2cm;
+    }
+}
+
+/* ===== ORIENTATION SPECIFIC STYLES ===== */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    /* Adjustments for landscape mode on small height devices */
+    .header {
+        padding: 5px 3%;
+    }
+    
+    section {
+        padding: 15px 3%;
+    }
+    
+    .hero-content, .about-content {
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .hero-image, .about-image {
+        max-width: 30%;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+    /* These styles will apply if the user has dark mode enabled */
+    body {
+        background-color: #121212;
+        color: #f0f0f0;
+    }
+    
+    .card, .project-card, .education-card, .skill-item {
+        background-color: #1e1e1e;
+        border-color: #333;
+    }
+    
+    input, textarea {
+        background-color: #2a2a2a;
+        color: #f0f0f0;
+        border-color: #444;
+    }
+    
+    a {
+        color: #90caf9;
+    }
+}
+
+/* ===== REDUCED MOTION PREFERENCES ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+} 

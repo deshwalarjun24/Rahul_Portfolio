@@ -1,0 +1,308 @@
+/* MacBook Responsive Styles */
+
+/* MacBook Air and smaller MacBook Pro (1280px-1440px) */
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+    /* Hero Section */
+    .hero-content {
+        max-width: 1100px;
+        padding: 1.5rem;
+    }
+    
+    .profile-photo img {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+    
+    /* About Section */
+    .about {
+        padding: 50px 100px;
+    }
+    
+    .about-image {
+        max-width: 230px;
+    }
+    
+    /* Experience Section */
+    .experience-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    /* Education Section */
+    .education-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    /* Skills Section */
+    .skills-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+    
+    .skills-section {
+        padding: 5rem 2rem;
+    }
+    
+    .skills-section h2 {
+        font-size: 2.8rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .skills-category {
+        margin-bottom: 3.5rem;
+        padding: 2rem;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .category-title {
+        font-size: 2rem;
+        margin-bottom: 1.8rem;
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.8rem;
+    }
+    
+    .skill-item {
+        padding: 1.5rem;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .skill-icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .skill-name {
+        font-size: 1.2rem;
+    }
+    
+    .progress-bar {
+        height: 10px;
+        margin-top: 0.8rem;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+}
+
+/* Larger MacBook Pro and iMac (1441px-2560px) */
+@media screen and (min-width: 1441px) and (max-width: 2560px) {
+    /* Hero Section */
+    .hero-content {
+        max-width: 1300px;
+        padding: 2rem;
+    }
+    
+    .profile-photo img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .hero h1 {
+        font-size: 3.2rem;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    /* About Section */
+    .about {
+        padding: 70px 150px;
+    }
+    
+    .about-image {
+        max-width: 280px;
+    }
+    
+    /* Experience Section */
+    .experience-container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    /* Education Section */
+    .education-container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    /* Skills Section */
+    .skills-container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    .skills-section {
+        padding: 6rem 3rem;
+    }
+    
+    .skills-section h2 {
+        font-size: 3.2rem;
+        margin-bottom: 3rem;
+    }
+    
+    .skills-section h2::after {
+        height: 5px;
+        bottom: -12px;
+    }
+    
+    .skills-category {
+        margin-bottom: 4rem;
+        padding: 2.5rem;
+        border-radius: 12px;
+    }
+    
+    .category-title {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .category-title::after {
+        height: 4px;
+        bottom: -10px;
+    }
+    
+    .skills-list {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 2rem;
+    }
+    
+    .skill-item {
+        padding: 1.8rem;
+        border-radius: 10px;
+    }
+    
+    .skill-icon {
+        font-size: 3.5rem;
+        margin-bottom: 1.2rem;
+    }
+    
+    .skill-name {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .progress-bar {
+        height: 12px;
+        margin-top: 1rem;
+    }
+    
+    /* Contact Section */
+    .contact-container {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+}
+
+/* Safari-specific fixes */
+@supports (-webkit-appearance:none) {
+    /* Improve text rendering */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Fix backdrop filters */
+    .hero::before {
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px);
+    }
+    
+    /* Improve scrolling */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Fix for Safari flexbox issues */
+    .about-flex, .experience-item, .education-item {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+    }
+    
+    /* Fix for Safari grid issues */
+    .skills-list {
+        display: -webkit-grid;
+        display: grid;
+    }
+}
+
+/* Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    /* Sharper images */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    /* Crisper text */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Sharper borders */
+    .about, .experience, .education, .skills, .contact {
+        border-width: 4px;
+    }
+    
+    /* Better shadows */
+    .about-image, .profile-photo img {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Improved icons */
+    .skill-icon, .social-links-hero a i, .social-links a i {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* Trackpad gesture support */
+@media (hover: hover) {
+    /* Smooth hover transitions */
+    a, button, .btn-primary, .btn-secondary {
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+    
+    /* Subtle hover effects */
+    .social-links-hero a:hover, .social-links a:hover {
+        transform: translateY(-3px);
+    }
+    
+    /* Skill item hover effects */
+    .skill-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Button hover effects */
+    .btn-primary:hover, .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Fix for scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fix for MacBook trackpad momentum scrolling */
+body {
+    -webkit-overflow-scrolling: touch;
+} 

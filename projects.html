@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Rahul Walia showcasing projects in web development, game development, music composition, and design.">
+    <meta name="keywords" content="Portfolio, Web Development, Game Development, Poster, Design, Rahul Walia">
+    <title>Rahul Walia - Projects</title>
+    <link rel="stylesheet" href="CSS/Header.css">
+    <link rel="stylesheet" href="CSS/Project.css">
+    <link rel="stylesheet" href="CSS/Filter.css">
+    <!-- Add RetroGaming CSS -->
+    <link rel="stylesheet" href="CSS/RetroGaming.css">
+    <!-- Comprehensive Responsive CSS -->
+    <link rel="stylesheet" href="CSS/ProjectsResponsive.css">
+    <!-- Retro Gaming Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/2d969ef76b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<!-- Removed particles.js Background -->
+
+<!-- Loading Screen -->
+<div class="loading-screen">
+    <div class="loading-content">
+        <h1>WELCOME</h1>
+        <div class="loading-bar-container">
+            <div class="loading-bar"></div>
+        </div>
+        <p class="loading-text">CLICK ANYWHERE TO CONTINUE</p>
+    </div>
+</div>
+
+<!-- Navigation Bar -->
+<header class="header">
+    <nav>
+    <div class="logo">
+        <a href="index.html">
+            <img src="Images/Photos/Logo.jpeg" alt="Logo">
+            <h1>Rahul Walia</h1>
+        </a>
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    </nav>
+</header>
+
+<script>
+    
+    function toggleMenu() {
+    const menu = document.querySelector('.menu');
+    const menuIcon = document.querySelector('.menu-icon');
+    
+    menu.classList.toggle('open'); // Toggle the 'open' class for showing/hiding the menu
+    menuIcon.classList.toggle('open'); // Toggle the color of the icon
+    
+    // Toggle icon between hamburger (☰) and cross (×)
+    if (menu.classList.contains('open')) {
+        menuIcon.innerHTML = '&times;'; // Cross icon (×)
+    } else {
+        menuIcon.innerHTML = '&#9776;'; // Hamburger icon (☰)
+    }
+}
+
+</script>
+
+<main>
+    <!-- Projects Section -->
+    <section id="projects" class="card">
+        <h2>Projects</h2>
+        
+        <!-- Mobile Dropdown Filter -->
+        <div class="filter-dropdown-container">
+            <button class="filter-dropdown-btn">
+                <span class="current-filter">All</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="filter-dropdown-content">
+                <a href="#" data-category="all" class="filter-option active">All</a>
+                <a href="#" data-category="web" class="filter-option">Web</a>
+                <a href="#" data-category="game" class="filter-option">Game</a>
+                <a href="#" data-category="LOGO" class="filter-option">Logo</a>
+                <a href="#" data-category="Poster" class="filter-option">Poster</a>
+            </div>
+        </div>
+        
+        <!-- Desktop Category Buttons -->
+        <div class="project-categories">
+            <button class="category-btn active" onclick="filterProjects('all')">All</button>
+            <button class="category-btn" onclick="filterProjects('web')">Web</button>
+            <button class="category-btn" onclick="filterProjects('game')">Game</button>
+            <button class="category-btn" onclick="filterProjects('LOGO')">Logo</button>
+            <button class="category-btn" onclick="filterProjects('Poster')">Poster</button>
+        </div>
+
+        <!-- Game Projects -->    
+        <div class="project-list"> 
+            
+            <!--Path Flex -->    
+            <div class="project-item" data-category="game">
+                <div class="carousel" aria-live="polite">
+                    
+                    <img src="Images/Games/Path Flex/Header.png" alt="Header" class="carousel-image" loading="lazy">
+                    <img src="Images/Games/Path Flex/Level 1.png" alt="Level 1" class="carousel-image" loading="lazy">
+                    <img src="Images/Games/Path Flex/Credits.png" alt="Credits" class="carousel-image active" loading="lazy">
+                    
+                    <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                    <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                </div>
+                <h3>Path Flex</h3>
+                <p>Navigate through dynamic obstacles, overcome challenges, and unlock new levels with precision and strategy!</p>
+                <p>
+                    <strong>Dynamic Gameplay:</strong> Experience adaptive paths and progressively harder levels. <br>
+                    <strong>Obstacle Navigation:</strong> Maneuver through complex and interactive obstacles. <br>
+                    <strong>Code Quality:</strong> Developed with OOP principles, clean coding practices, and efficient algorithms.
+                </p>
+                <p>Nov 2024 - Present</p>
+                <a href="youtube link here " target="_blank" rel="noopener noreferrer" class="play-video-link">
+                    <i class="fas fa-play-circle"></i> Watch Gameplay
+                </a>
+            </div>
+            
+
+                <!-- Escape Route -->    
+                <div class="project-item" data-category="game">
+                    <div class="carousel" aria-live="polite">
+                        <img src="Images/Games/EsacpeRoute/Header.png" alt="Header of the Game" class="carousel-image active" loading="lazy">
+                        <img src="Images/Games/EsacpeRoute/Header.png" alt="Main menu of the game" class="carousel-image" loading="lazy">
+                        <img src="Images/Games/EsacpeRoute/PlayMenu.png" alt="PlayMenu" class="carousel-image" loading="lazy" >
+                        <img src="Images/Games/EsacpeRoute/Stages.png" alt="Stages" class="carousel-image" loading="lazy" >
+                        <img src="Images/Games/EsacpeRoute/Level1.png" alt="Level 1" class="carousel-image" loading="lazy" >
+                        <img src="Images/Games/EsacpeRoute/Level2.png" alt="Level 2" class="carousel-image" loading="lazy" >
+                        <img src="Images/Games/EsacpeRoute/Level3.png" alt="Level 3" class="carousel-image" loading="lazy" >
+                        <img src="Images/Games/EsacpeRoute/Level4.png" alt="Level 4" class="carousel-image" loading="lazy" >
+                        <img src="Images/Games/EsacpeRoute/Pause Menu.png" alt="Pause Menu" class="carousel-image" loading="lazy">
+                        <img src="Images/Games/EsacpeRoute/EndScene.png" alt="End Scene" class="carousel-image" loading="lazy" >
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                        
+                    </div>
+                    <h3>Escape Route</h3>
+                    <p>Navigate through thrilling obstacles, gather points, and test your reflexes to the limit!</p>
+                    <p><strong>Gameplay:</strong> Navigate through challenging obstacles while collecting points. <br>
+                        <strong>Levels:</strong> Progress through multiple levels with increasing difficulty. <br>
+                        <strong>Code Quality:</strong> Developed using OOP principles, clean coding practices, and optimized for performance.</p>
+                        <p>May 2024 - Nov 2024</p>
+                        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7288588553888972800/" target="_blank" rel="noopener noreferrer" class="play-video-link">
+                            <i class="fas fa-play-circle"></i> Watch Gameplay
+                        </a>
+                    </div>
+                    
+                    <!-- Flappy Bird -->    
+            <div class="project-item" data-category="game">
+                <div class="carousel" aria-live="polite">
+                    <img src="Images/Games/Flappy Bird/first.png" alt="Flappy Bird - Image 1" class="carousel-image active" loading="lazy" aria-hidden="false">
+                    
+                    <!-- <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                    <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button> -->
+                </div>
+                <h3>Flappy Bird</h3>
+                <p>Tap to fly and navigate through obstacles in this addictive endless arcade game!</p>
+                <p><strong>Game Mechanics:</strong> Simple yet challenging physics-based gameplay. <br>
+                    <strong>Performance:</strong> Optimized for smooth experience with minimal latency.</p>
+                <p>Oct 2023 - Nov 2023</p>
+                <a href="https://x.com/RahulWalia01/status/1777453398331400267/video/1" target="_blank" rel="noopener noreferrer" class="play-video-link">
+                    <i class="fas fa-play-circle"></i> Watch Gameplay
+                </a>
+            </div>
+
+            <!-- Chess Moves Calculator -->    
+            <div class="project-item" data-category="game">
+                <div class="carousel" aria-live="polite">
+                    <img src="Images/Games/Chess Moves Calculator/pic1.png " alt="Chess Moves Calculator - Image 1" class="carousel-image active" loading="lazy" aria-hidden="false">
+                    <img src="Images/Games/Chess Moves Calculator/pic2.png" alt="Chess Moves Calculator - Image 2" class="carousel-image" loading="lazy" aria-hidden="true">
+                    <img src="Images/Games/Chess Moves Calculator/pic3.png" alt="Chess Moves Calculator - Image 3" class="carousel-image" loading="lazy" aria-hidden="true">
+
+                    <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                    <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                </div>
+                                            
+                <h3>Chess Moves Calculator</h3>
+                    <p>Calculate possible chess moves | Unity</p>
+                    <p><strong>Highlight Moves:</strong> Show all legal moves by highlighting cells. <br>
+
+                    <strong>Enemy Capture:</strong> Highlight cells with capturable enemy pieces in red. <br>
+                    <strong>Code Quality:</strong> Use OOP, design patterns, and clean coding practices.</p>
+                    <p>Dec 2023 - Feb 2024</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="play-video-link">
+                        <i class="fas fa-info-circle"></i> View Details
+                    </a>
+            </div> 
+
+
+
+
+            <!-- Web Projects -->
+
+                <!-- Blood Bank Management System -->
+                <div class="project-item" data-category="web">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot1.jpg" alt="Blood Bank Management System Screenshot 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot2.jpg" alt="Blood Bank Management System Screenshot 2" class="carousel-image" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot3.jpg" alt="Blood Bank Management System Screenshot 3" class="carousel-image" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot4.jpg" alt="Blood Bank Management System Screenshot 4" class="carousel-image" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot5.jpg" alt="Blood Bank Management System Screenshot 5" class="carousel-image" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot6.jpg" alt="Blood Bank Management System Screenshot 6" class="carousel-image" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot7.jpg" alt="Blood Bank Management System Screenshot 7" class="carousel-image" loading="lazy">
+                            <img src="Images/Website/BloodBankManagementSystem/screenshot8.jpg" alt="Blood Bank Management System Screenshot 8" class="carousel-image" loading="lazy">
+                        </div>
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <h3>Blood Bank Management System</h3>
+                    <p>Comprehensive Web Application | HTML, CSS, JavaScript, PHP, Figma</p>
+                    <p>Nov 2023 - Mar 2024</p>
+                    <p>Developed a comprehensive Blood Bank Management System website as a key project. Leveraged HTML, CSS, JavaScript, PHP, and Figma for seamless functionality. The system facilitates efficient blood inventory management, donor registration, and blood request handling.</p>
+                    <a href="#" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+
+                <!-- YouTube Clone -->
+                <div class="project-item" data-category="web">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <img src="Images/Website/YouTubeClone/Screenshot1.png" alt="YouTube Clone eCommerce Website Screenshot" class="carousel-image active" loading="lazy">
+                            <img src="Images/Website/YouTubeClone/Screenshot2.png" alt="YouTube Clone eCommerce Website Screenshot" class="carousel-image" loading="lazy">
+                        </div>
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <h3>YouTube Clone</h3>
+                    <p>eCommerce Web Application | HTML, CSS, JavaScript</p>
+                    <p>Mar 2024</p>
+                    <p>Created an eCommerce website inspired by YouTube's layout and functionality, focusing on product display, user engagement, and seamless navigation. Utilized modern web technologies to enhance user experience.</p>
+                    <a href="#" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Project
+                    </a>
+                </div>
+                
+                <!-- Logo Projects -->
+                <div class="project-item" data-category="LOGO">
+                    <div class="carousel">
+                        <div class="carousel-images">
+                            <img src="Images/Logo/Logo1.webp" alt="Logo Design 1" class="carousel-image active" loading="lazy">
+                            <img src="Images/Logo/Logo2.webp" alt="Logo Design 2" class="carousel-image" loading="lazy">
+                        </div>
+                        <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                        <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                    </div>
+                    <h3>Logo Design Collection</h3>
+                    <p>Brand Identity | Figma, Adobe Illustrator</p>
+                    <p>Jan 2024 - Present</p>
+                    <p>Created a series of logo designs for various clients and personal projects, focusing on brand identity, visual appeal, and market relevance. Each logo is designed with careful attention to color theory, typography, and scalability.</p>
+                    <a href="#" class="project-link" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Collection
+                    </a>
+                </div>
+
+                <!-- Poster Projects -->
+                <div class="project-item poster-item" data-category="Poster">
+                    <div class="poster-content-wrapper">
+                        <div class="poster-carousel carousel">
+                            <div class="carousel-images">
+                                <img src="Images/Poster/Kashmir Trip Poster.png" alt="Poster Design 1" class="carousel-image active" loading="lazy">
+                                <img src="Images/Poster/Kerela Trip Poster.png" alt="Poster Design 2" class="carousel-image" loading="lazy">
+                            </div>
+                            <button class="prev" aria-label="Previous Image" onclick="prevImage(this)">❮</button>
+                            <button class="next" aria-label="Next Image" onclick="nextImage(this)">❯</button>
+                        </div>
+                        <div class="poster-text">
+                            <h3>Poster Design Collection</h3>
+                            <p>Visual Communication | Adobe Photoshop, Canva</p>
+                            <p>Feb 2024 - Present</p>
+                            <p>Designed a series of posters for events, promotions, and artistic expression. Each poster is crafted with a focus on visual impact, message clarity, and audience engagement.</p>
+                            <a href="#" class="project-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> View Collection
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">↑</button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Rahul Walia | All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Carousel and Filtering -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.querySelector('.loading-screen');
+            const loadingBar = document.querySelector('.loading-bar');
+            const loadingText = document.querySelector('.loading-text');
+            
+            // Mark all carousels as loaded to prevent preloader from showing
+            const carousels = document.querySelectorAll('.carousel');
+            carousels.forEach(carousel => {
+                carousel.classList.add('loaded');
+            });
+            
+            // Preload all images to prevent reloading
+            const allImages = document.querySelectorAll('img');
+            allImages.forEach(img => {
+                // Set complete flag to true for already loaded images
+                if (img.complete) {
+                    img.dataset.loaded = 'true';
+                } else {
+                    // For images still loading, add an event listener
+                    img.addEventListener('load', function() {
+                        img.dataset.loaded = 'true';
+                    });
+                    
+                    // For images that fail to load, still mark as processed
+                    img.addEventListener('error', function() {
+                        img.dataset.loaded = 'error';
+                        console.log('Failed to load image:', img.src);
+                    });
+                }
+            });
+            
+            // Check if direct=true parameter is present
+            const urlParams = new URLSearchParams(window.location.search);
+            const isDirect = urlParams.get('direct') === 'true';
+            
+            // Skip loading screen completely if direct=true
+            if (isDirect) {
+                loadingScreen.style.display = 'none';
+                return;
+            }
+            
+            // Check if coming from index page
+            const referrer = document.referrer;
+            const isFromIndex = referrer.includes('index.html') || referrer.endsWith('/') || 
+                               referrer.includes('rahulwalia') || referrer === '';
+            
+            // Set initial state of loading text
+            if (isFromIndex) {
+                // Hide click text when coming from index
+                loadingText.style.display = 'none';
+            } else {
+                // Initially hide for first-time visitors, will show after loading
+                loadingText.style.opacity = '0';
+            }
+            
+            // Simulate loading progress
+            let progress = 0;
+            const loadingInterval = setInterval(function() {
+                if (isFromIndex) {
+                    // Moderate speed when coming from index
+                    progress += 20; // Complete in 5 steps
+                } else {
+                    // Normal speed for first-time visitors
+                    progress += 15; // Complete in ~7 steps
+                }
+                
+                // Update loading bar
+                loadingBar.style.width = progress + '%';
+                
+                // Check if loading is complete
+                if (progress >= 100) {
+                    progress = 100;
+                    loadingBar.style.width = '100%';
+                    clearInterval(loadingInterval);
+                    
+                    if (isFromIndex) {
+                        // Auto-dismiss after a short delay when coming from index
+                        setTimeout(function() {
+                            loadingScreen.style.opacity = '0';
+                            setTimeout(function() {
+                                loadingScreen.style.display = 'none';
+                            }, 300);
+                        }, 200);
+                    } else {
+                        // Show "Click anywhere" for first-time visitors
+                        loadingText.style.opacity = '1';
+                        
+                        // Add event listeners for dismissing
+                        document.addEventListener('click', dismissLoadingScreen);
+                        document.addEventListener('keydown', dismissLoadingScreen);
+                    }
+                }
+            }, isFromIndex ? 80 : 100);
+            
+            function dismissLoadingScreen() {
+                // Remove event listeners first to prevent multiple calls
+                document.removeEventListener('click', dismissLoadingScreen);
+                document.removeEventListener('keydown', dismissLoadingScreen);
+                
+                // Fade out loading screen
+                loadingScreen.style.opacity = '0';
+                
+                // Hide loading screen after fade out
+                setTimeout(function() {
+                    loadingScreen.style.display = 'none';
+                }, 300);
+            }
+        });
+
+        // Carousel Navigation
+        function nextImage(button) {
+            const carousel = button.closest('.carousel');
+            let images;
+            
+            // Check if images are in a container div (some carousels have this structure)
+            const imageContainer = carousel.querySelector('.carousel-images');
+            if (imageContainer) {
+                images = imageContainer.querySelectorAll('.carousel-image');
+            } else {
+                images = carousel.querySelectorAll('.carousel-image');
+            }
+            
+            if (images.length === 0) return; // No images found
+            
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            if (activeIndex === -1) activeIndex = 0; // Default to first image if none active
+            
+            // Hide current image
+            images[activeIndex].classList.remove('active');
+            
+            // Calculate next index
+            activeIndex = (activeIndex + 1) % images.length;
+            
+            // Show next image immediately
+            images[activeIndex].classList.add('active');
+        }
+        
+        function prevImage(button) {
+            const carousel = button.closest('.carousel');
+            let images;
+            
+            // Check if images are in a container div (some carousels have this structure)
+            const imageContainer = carousel.querySelector('.carousel-images');
+            if (imageContainer) {
+                images = imageContainer.querySelectorAll('.carousel-image');
+            } else {
+                images = carousel.querySelectorAll('.carousel-image');
+            }
+            
+            if (images.length === 0) return; // No images found
+            
+            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
+            if (activeIndex === -1) activeIndex = 0; // Default to first image if none active
+            
+            // Hide current image
+            images[activeIndex].classList.remove('active');
+            
+            // Calculate previous index
+            activeIndex = (activeIndex - 1 + images.length) % images.length;
+            
+            // Show previous image immediately
+            images[activeIndex].classList.add('active');
+        }
+        
+        // Project Filtering
+        function filterProjects(category) {
+            const projectItems = document.querySelectorAll('.project-item');
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            
+            // Update active button
+            categoryButtons.forEach(button => {
+                if (button.textContent.toLowerCase() === category.toLowerCase()) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+            
+            // Filter projects
+            projectItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            // Update mobile dropdown if it exists
+            const currentFilter = document.querySelector('.current-filter');
+            if (currentFilter) {
+                // Find the matching category text
+                const filterOptions = document.querySelectorAll('.filter-option');
+                filterOptions.forEach(option => {
+                    if (option.dataset.category === category) {
+                        currentFilter.textContent = option.textContent;
+                        option.classList.add('active');
+                    } else {
+                        option.classList.remove('active');
+                    }
+                });
+            }
+        }
+        
+        // Mobile Filter Dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownBtn = document.querySelector('.filter-dropdown-btn');
+            const dropdownContent = document.querySelector('.filter-dropdown-content');
+            const filterOptions = document.querySelectorAll('.filter-option');
+            
+            if (dropdownBtn && dropdownContent) {
+                // Toggle dropdown
+                dropdownBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownContent.classList.toggle('show');
+                });
+                
+                // Handle filter option selection
+                filterOptions.forEach(option => {
+                    option.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const category = this.dataset.category;
+                        filterProjects(category);
+                        
+                        // Hide dropdown
+                        dropdownContent.classList.remove('show');
+                    });
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.filter-dropdown-container')) {
+                        dropdownContent.classList.remove('show');
+                    }
+                });
+            }
+        });
+        
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add touch event support for MacBook trackpads
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... existing code ...
+            
+            // Add touch swipe support for carousels
+            const carousels = document.querySelectorAll('.carousel');
+            carousels.forEach(carousel => {
+                let touchStartX = 0;
+                let touchEndX = 0;
+                
+                carousel.addEventListener('touchstart', function(e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, false);
+                
+                carousel.addEventListener('touchend', function(e) {
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe(carousel);
+                }, false);
+                
+                // Also support trackpad gestures on MacBooks
+                let isTrackpadSwipe = false;
+                let trackpadDeltaX = 0;
+                
+                carousel.addEventListener('wheel', function(e) {
+                    // Only handle horizontal scrolling (typical for trackpad gestures)
+                    if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+                        e.preventDefault();
+                        trackpadDeltaX += e.deltaX;
+                        
+                        // Accumulate delta until it reaches a threshold
+                        if (Math.abs(trackpadDeltaX) > 50) {
+                            if (trackpadDeltaX > 0) {
+                                // Swipe left - next image
+                                const nextBtn = carousel.querySelector('.next');
+                                if (nextBtn) nextImage(nextBtn);
+                            } else {
+                                // Swipe right - previous image
+                                const prevBtn = carousel.querySelector('.prev');
+                                if (prevBtn) prevImage(prevBtn);
+                            }
+                            trackpadDeltaX = 0;
+                        }
+                    }
+                }, { passive: false });
+                
+                function handleSwipe(carousel) {
+                    const swipeThreshold = 50;
+                    const swipeDistance = touchEndX - touchStartX;
+                    
+                    if (swipeDistance > swipeThreshold) {
+                        // Swipe right - previous image
+                        const prevBtn = carousel.querySelector('.prev');
+                        if (prevBtn) prevImage(prevBtn);
+                    } else if (swipeDistance < -swipeThreshold) {
+                        // Swipe left - next image
+                        const nextBtn = carousel.querySelector('.next');
+                        if (nextBtn) nextImage(nextBtn);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
