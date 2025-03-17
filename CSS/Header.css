@@ -4,13 +4,15 @@
   top: 0;
   height: 70px; /* Slightly smaller header height */
   width: 100%;
-  background-color: #151418;
+  background-color: #1a1a1a;
   z-index: 1000;
   display: flex; /* Use flexbox for centering */
   justify-content: center;
   align-items: center; /* Vertically center content */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Softer shadow */
   transition: background-color 0.3s ease; /* Smooth transition for background */
+  color: white;
+  padding: 20px 5%;
 }
 
 nav {
@@ -26,8 +28,7 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  gap: 1rem; /* Adjusted gap */
-  flex-direction: row; /* Ensure items are in a row */
+  gap: 10px;
 }
 
 .logo a {
@@ -38,9 +39,10 @@ nav {
 }
 
 .logo img {
-  height: 40px; /* Adjusted logo size */
-  width: auto;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  object-fit: cover;
   transition: transform 0.3s ease; /* Smooth transition for hover effect */
   transform: scaleX(-1); /* Flip the image horizontally */
 }
@@ -50,80 +52,133 @@ nav {
 }
 
 .logo h1 {
-  font-size: 1.5rem; /* Adjusted font size */
-  color: #fff;
+  font-size: 1.8rem;
   margin: 0;
-  font-weight: 500; /* Slightly less bold */
+  font-weight: 700;
 }
 
 .menu {
   display: flex;
   list-style: none;
-  padding: 0; /* Remove default padding */
-  margin: 0; /* Remove default margin */
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 15px;
 }
 
 .menu a {
-  color: #0095B7;
+  color: white;
   text-decoration: none;
-  padding: 0.5rem 1rem; /* Adjusted padding */
-  margin: 0 0.5rem; /* Add some margin between links */
-  border-radius: 5px; /* Add rounded corners */
-  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 5px 0;
+  position: relative;
 }
 
-.menu a:hover,
-.menu a.active { /* Style for active link (add .active class to the current link) */
-  color: #007B9A; /* Darker teal on hover/active */
-  background-color: rgba(0, 150, 183, 0.1);  /* Subtle background on hover/active */
+.menu a:hover {
+  color: #4db5ff;
 }
 
-
-.menu-icon {
-  display: none;
-  color: #fff;
-  font-size: 1.8rem; /* Adjusted icon size */
-  cursor: pointer;
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #4db5ff;
+  transition: width 0.3s;
 }
 
+.menu a:hover::after {
+  width: 100%;
+}
+
+/* Menu toggle for mobile */
 #menu-toggle {
   display: none;
 }
 
-/* Media Query for Responsiveness */
-@media only screen and (max-width: 950px) {
-  .menu {
-      flex-direction: column;
-      background-color: #151418;
-      position: absolute;
-      top: 70px; /* Adjust top value if header height changes */
-      left: 0;
-      width: 100%;
-      z-index: 1;
-      transform: scale(1, 0); /* Initially hidden */
-      transform-origin: top;
-      transition: transform 0.3s ease-in-out;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Add a shadow to the menu */
-  }
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
 
-  .menu a {
-      display: block; /* Make links stack vertically */
-      padding: 1rem; /* Increased padding */
-      margin: 0; /* Remove horizontal margins */
-      text-align: center; /* Center the text */
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add a separator line */
-  }
-
-  .menu a:last-child {
-      border-bottom: none; /* Remove separator from the last link */
-  }
-
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
   .menu-icon {
-      display: block;
+    display: block;
   }
+  
+  .menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    flex-direction: column;
+    align-items: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    z-index: 1000;
+  }
+  
+  .menu.open {
+    max-height: 500px;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu li {
+    margin: 15px 0;
+  }
+  
+  .menu a {
+    font-size: 1.1rem;
+  }
+}
 
-  #menu-toggle:checked ~ .menu {
-      transform: scale(1, 1); /* Show menu when checked */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 15px 4%;
+  }
+  
+  .logo img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem;
+  }
+  
+  .menu {
+    top: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .header {
+    padding: 10px 3%;
+  }
+  
+  .logo img {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .logo h1 {
+    font-size: 1.3rem;
   }
 }
 

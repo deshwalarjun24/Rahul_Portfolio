@@ -80,20 +80,34 @@
     </nav>
     </header>
     <script>
-    function toggleMenu() {
-        const menu = document.querySelector(".menu");
-        const menuIcon = document.querySelector(".menu-icon");
-
-        menu.classList.toggle("open"); // Toggle the 'open' class for showing/hiding the menu
-        menuIcon.classList.toggle("open"); // Toggle the color of the icon
-
-        // Toggle icon between hamburger (☰) and cross (×)
-        if (menu.classList.contains("open")) {
-          menuIcon.innerHTML = "&times;"; // Cross icon (×)
-        } else {
-          menuIcon.innerHTML = "&#9776;"; // Hamburger icon (☰)
+    // Menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuIcon = document.querySelector('.menu-icon');
+        const menu = document.querySelector('.menu');
+        
+        if (menuToggle && menuIcon && menu) {
+            menuToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    menu.classList.add('open');
+                    menuIcon.innerHTML = '&times;'; // Cross icon
+                } else {
+                    menu.classList.remove('open');
+                    menuIcon.innerHTML = '&#9776;'; // Hamburger icon
+                }
+            });
+            
+            // Close menu when clicking on menu items
+            const menuItems = document.querySelectorAll('.menu a');
+            menuItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    menuToggle.checked = false;
+                    menu.classList.remove('open');
+                    menuIcon.innerHTML = '&#9776;';
+                });
+            });
         }
-    }
+    });
     </script>
     <!-- Hero Section -->
     <section class="hero" role="banner">

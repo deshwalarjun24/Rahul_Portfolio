@@ -36,41 +36,51 @@
 <!-- Navigation Bar -->
 <header class="header">
     <nav>
-    <div class="logo">
-        <a href="index.html">
-            <img src="Images/Photos/Logo.jpeg" alt="Logo">
+        <div class="logo">
+            <img src="Images/Photos/Logo.jpeg" alt="Logo" class="logo" />
             <h1>Rahul Walia</h1>
-        </a>
-    </div>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" class="menu-icon">&#9776;</label>
-    <ul class="menu">
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#experience">Experience</a></li>
-        <li><a href="index.html#projects">Projects</a></li>
-        <li><a href="index.html#education">Education</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-    </ul>
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#experience">Experience</a></li>
+            <li><a href="index.html#education">Education</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
     </nav>
 </header>
 
 <script>
-    
-    function toggleMenu() {
-    const menu = document.querySelector('.menu');
+// Menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
     const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('.menu');
     
-    menu.classList.toggle('open'); // Toggle the 'open' class for showing/hiding the menu
-    menuIcon.classList.toggle('open'); // Toggle the color of the icon
-    
-    // Toggle icon between hamburger (☰) and cross (×)
-    if (menu.classList.contains('open')) {
-        menuIcon.innerHTML = '&times;'; // Cross icon (×)
-    } else {
-        menuIcon.innerHTML = '&#9776;'; // Hamburger icon (☰)
+    if (menuToggle && menuIcon && menu) {
+        menuToggle.addEventListener('change', function() {
+            if (this.checked) {
+                menu.classList.add('open');
+                menuIcon.innerHTML = '&times;'; // Cross icon
+            } else {
+                menu.classList.remove('open');
+                menuIcon.innerHTML = '&#9776;'; // Hamburger icon
+            }
+        });
+        
+        // Close menu when clicking on menu items
+        const menuItems = document.querySelectorAll('.menu a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', function() {
+                menuToggle.checked = false;
+                menu.classList.remove('open');
+                menuIcon.innerHTML = '&#9776;';
+            });
+        });
     }
-}
-
+});
 </script>
 
 <main>
